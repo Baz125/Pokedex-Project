@@ -1,5 +1,25 @@
 
 
+
+let  pokemonList = [
+  {
+    name: 'Venusaur',
+    height: 2,
+    types: [grass, poison]
+  },
+  {
+    name: 'Slobrow',
+    height: 4,
+    types: ['psychic', 'water']
+  },
+  {
+    name: 'Gyrados' ,
+    height: 6.5,
+    types: ['water', 'flying']
+  }
+]
+
+/*
 let venusaur = [
     {name: 'Venusaur'},
     {height: 2},
@@ -23,25 +43,4 @@ let pokemonList = [
   slowbro,
   gyrados
 ];
-
-/*
-Below is my first attempt. I believe the correct answer will be closer to this:
-
-let  pokeList = [
-  {
-    {name: 'Venusaur'
-    height: 4
-    types: [grass, poison]}
-  },
-  {
-    {name: 'Slobrow'
-    height: 4
-    types: ['psychic', 'water']}
-  },
-  {
-    {name: 'Gyrados' 
-    height: 6.5
-    types: ['water', 'flying']}
-  },
-]
 */

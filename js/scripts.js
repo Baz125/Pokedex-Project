@@ -17,14 +17,11 @@ let pokemonList = [
 ] ;
 
 
-// my working attempt to print the list
+//for loop iterating through the array until the end
 for (let i = 0; i < pokemonList.length; i++) {
-  document.write('<p>' + pokemonList[i].name + " Height: " + pokemonList[i].height + '</p>');
-}
-
-//my non-working attempt to write the list with the condition
-for (let i = 0; i < pokemonList.length; i++) {
-  if (height < 6) {document.write('<p>' + pokemonList[i].name + " Height: " + pokemonList[i].height + '</p>');
-} else {document.write('<p>' + pokemonList[i].name + 'Height:' + pokemonList[i].height + 'He is a Big Boy!' + '</p>');
+  //for pokemon with height less than 6 just print name and height
+  if (pokemonList[i].height < 6) {document.write('<p>' + pokemonList[i].name + ': Height:' + pokemonList[i].height + '</p>');
+  //for pokemon whose height is not less than 6 print name, height and extra message
+} else {document.write('<p>' + pokemonList[i].name + ' Height: ' + pokemonList[i].height + ' - Wow! He\'s a Big Boy! ' + '</p>');
   }
 }

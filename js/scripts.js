@@ -1,14 +1,11 @@
-
-
-
-let  pokemonList = [
+let pokemonList = [
   {
     name: 'Venusaur',
     height: 2,
-    types: [grass, poison]
+    types: ['grass', 'poison']
   },
   {
-    name: 'Slobrow',
+    name: 'Slowbro',
     height: 4,
     types: ['psychic', 'water']
   },
@@ -17,30 +14,17 @@ let  pokemonList = [
     height: 6.5,
     types: ['water', 'flying']
   }
-]
+] ;
 
-/*
-let venusaur = [
-    {name: 'Venusaur'},
-    {height: 2},
-    ['grass', 'poison']
-  ];
 
-let slowbro = [
-  {name: 'Slowbrow'},
-  {height: 1.6},
-  ['psychic', 'water']
-];
+// my working attempt to print the list
+for (let i = 0; i < pokemonList.length; i++) {
+  document.write('<p>' + pokemonList[i].name + " Height: " + pokemonList[i].height + '</p>');
+}
 
-let gyrados = [
-  {name: 'Gyrados'},
-  {height: 6.5},
-  ['water', 'flying']
-]
-
-let pokemonList = [
-  venusaur,
-  slowbro,
-  gyrados
-];
-*/
+//my non-working attempt to write the list with the condition
+for (let i = 0; i < pokemonList.length; i++) {
+  if (height < 6) {document.write('<p>' + pokemonList[i].name + " Height: " + pokemonList[i].height + '</p>');
+} else {document.write('<p>' + pokemonList[i].name + 'Height:' + pokemonList[i].height + 'He is a Big Boy!' + '</p>');
+  }
+}

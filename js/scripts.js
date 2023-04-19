@@ -17,7 +17,12 @@ let pokemonRepository = (function () {
     },
   ];
   function add(pokemon) {
+    if (typeof object.keys(pokemonList.name === String))
+    if (typeof object.keys(pokemonList.height === Number))
+    if (typeof object.keys(pokemonList.types === Array))
+     {
     pokemonList.push(pokemon);
+    }
   }
 
   function getAll() {
@@ -25,42 +30,24 @@ let pokemonRepository = (function () {
   }
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
   };
 })();
 
-
-function myLoopFunction (pokemon) {
-  document.write("<p class = 'pokemon-card'>" + pokemon.name + " - Height: " + pokemon.height + ". Types: " + pokemon.types + "</p>")
+function myLoopFunction(pokemon) {
+  document.write(
+    "<p class = 'pokemon-card'>" +
+      pokemon.name +
+      " - Height: " +
+      pokemon.height +
+      ". Types: " +
+      pokemon.types +
+      "</p>"
+  );
 }
 pokemonRepository.getAll().forEach(myLoopFunction);
 
+function filterItems(arr, query) {
+  return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
+}
 
-
-
-
-
-
-
-
-// //for loop iterating through the array until the end
-// for (let i = 0; i < pokemonList.length; i++) {
-//   const name = pokemonList[i].name;
-//   const height = pokemonList[i].height;
-//   //for pokemon with height less than 6 just print name and height
-//   if (pokemonList[i].height < 6) {
-//     document.write(
-//       "<p class = 'pokemon-card'>" + name + " - Height: " + height + "</p>"
-//     );
-//     //for pokemon whose height is not less than 6 print name, height and extra message
-//   } else {
-//     document.write(
-//       "<p class = 'pokemon-card'>" +
-//         name +
-//         " - Height: " +
-//         height +
-//         " - Wow! He's a <span class = 'big'>Big</span> Boy! " +
-//         "</p>"
-//     );
-//   }
-// }

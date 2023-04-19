@@ -1,25 +1,42 @@
-let pokemonList = [
-  {
-    name: "Venusaur",
-    height: 2,
-    types: [" grass", " poison"],
-  },
-  {
-    name: "Slowbro",
-    height: 4,
-    types: [" psychic", " water"],
-  },
-  {
-    name: "Gyrados",
-    height: 6.5,
-    types: [" water", " flying"],
-  },
-];
+let pokemonRepository = (function () {
+  let pokemonList = [
+    {
+      name: "Venusaur",
+      height: 2,
+      types: [" grass", " poison"],
+    },
+    {
+      name: "Slowbro",
+      height: 4,
+      types: [" psychic", " water"],
+    },
+    {
+      name: "Gyrados",
+      height: 6.5,
+      types: [" water", " flying"],
+    },
+  ];
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  function getAll() {
+    return pokemonList;
+  }
+  return {
+    add: add,
+    getAll: getAll
+  };
+})();
+
 
 function myLoopFunction (pokemon) {
   document.write("<p class = 'pokemon-card'>" + pokemon.name + " - Height: " + pokemon.height + ". Types: " + pokemon.types + "</p>")
 }
-pokemonList.forEach(myLoopFunction);
+pokemonRepository.getAll().forEach(myLoopFunction);
+
+
+
 
 
 

@@ -1,0 +1,15 @@
+
+* {
+    background-color: pink;
+}
+
+.pokemon-card {
+    background-color: pink;
+    color: yellow;
+    font-weight: bold;
+}
+.big {
+    background-color: red;
+    color: yellow;
+    font-weight: bolder;
+}

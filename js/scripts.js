@@ -17,11 +17,13 @@ let pokemonRepository = (function () {
     },
   ];
   function add(pokemon) {
-    if (typeof object.keys(pokemonList.name === String))
-    if (typeof object.keys(pokemonList.height === Number))
-    if (typeof object.keys(pokemonList.types === Array))
-     {
-    pokemonList.push(pokemon);
+    const keys = Object.keys(pokemon);
+    typeof pokemon === "object" &&
+      keys.includes("name") &&
+      keys.includes("height") &&
+      keys.includes("types");
+    {
+      pokemonList.push(pokemon);
     }
   }
 
@@ -48,6 +50,7 @@ function myLoopFunction(pokemon) {
 pokemonRepository.getAll().forEach(myLoopFunction);
 
 function filterItems(arr, query) {
-  return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
+  return arr.filter((el) =>
+    el.name.toLowerCase().includes(query.toLowerCase())
+  );
 }
-

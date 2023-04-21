@@ -3,25 +3,25 @@ let pokemonRepository = (function () {
     {
       name: "Venusaur",
       height: 2,
-      types: [" grass", " poison"],
+      types: ["grass", "poison"],
     },
     {
       name: "Slowbro",
       height: 4,
-      types: [" psychic", " water"],
+      types: ["psychic", "water"],
     },
     {
       name: "Gyrados",
       height: 6.5,
-      types: [" water", " flying"],
+      types: ["water", "flying"],
     },
   ];
   function add(pokemon) {
     const keys = Object.keys(pokemon);
-    typeof pokemon === "object" &&
+    if (typeof pokemon === "object" &&
       keys.includes("name") &&
       keys.includes("height") &&
-      keys.includes("types");
+      keys.includes("types"))
     {
       pokemonList.push(pokemon);
     }
@@ -47,7 +47,16 @@ function myLoopFunction(pokemon) {
       "</p>"
   );
 }
-pokemonRepository.getAll().forEach(myLoopFunction);
+pokemonRepository.getAll().forEach(function (pokemon) {
+ let unorderedList = document.querySelector('.pokemon-list');
+ let listItem = document.createElement('li');
+ let button = document.createElement('button');
+ button.innerText = pokemon.name;
+ button.classList.add("button-class");
+ listItem.appendChild(button);
+ unorderedList.appendChild(listItem);
+
+});
 
 function filterItems(arr, query) {
   return arr.filter((el) =>

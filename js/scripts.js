@@ -40,10 +40,14 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
     let button = document.createElement("button");
+    let cardDiv = document.createElement("div");
+    cardDiv.className = "pokemon-card";
     button.innerText = pokemon.name;
     button.classList.add("button-class");
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
+    cardDiv.appendChild(button);
+    listPokemon.appendChild(cardDiv);
     button.addEventListener('click', function () {
       showDetails(pokemon)});
   }

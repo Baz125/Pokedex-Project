@@ -1,19 +1,19 @@
 let pokemonRepository = (function () {
-  let pokemonList = [
+  let repository = [
     {
       name: "Venusaur",
       height: 2,
-      types: ["grass","poison"],
+      types: ["grass", "poison"],
     },
     {
       name: "Slowbro",
       height: 4,
-      types: ["psychic","water"],
+      types: ["psychic", "water"],
     },
     {
       name: "Gyrados",
       height: 6.5,
-      types: ["water","flying"],
+      types: ["water", "flying"],
     },
   ];
   function add(pokemon) {
@@ -23,31 +23,48 @@ let pokemonRepository = (function () {
       keys.includes("height") &&
       keys.includes("types"))
     {
-      pokemonList.push(pokemon);
+      repository.push(pokemon);
     }
+    else {console.log("data is not correct, we need a name, height and types for each pokemon")}
   }
 
   function getAll() {
-    return pokemonList;
+    return repository;
   }
+
+  function showDetails(pokemon) {
+    console.log(pokemon)
+  }
+
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listPokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
+    button.addEventListener('click', function () {
+      showDetails(pokemon)});
+  }
+
+
+
+
+  
   return {
     add: add,
     getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
-function myLoopFunction(pokemon) {
-  document.write(
-    "<p class = 'pokemon-card'>" +
-      pokemon.name +
-      " - Height: " +
-      pokemon.height +
-      ". Types: " +
-      pokemon.types +
-      "</p>"
-  );
-}
-pokemonRepository.getAll().forEach(myLoopFunction);
+pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
+
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
 
 function filterItems(arr, query) {
   return arr.filter((el) =>

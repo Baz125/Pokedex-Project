@@ -82,17 +82,22 @@ let pokemonRepository = (function () {
     let button = document.createElement("button");
     let cardDiv = document.createElement("div");
     let nameCapitalized = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+    let pokeballImage = document.createElement("img");
     cardDiv.className = "pokemon-card";
     button.setAttribute("data-target", "#detailsModal");
     button.setAttribute("data-toggle", "modal");
+    pokeballImage.setAttribute("src", "img/pokeball.png");
     button.innerText = nameCapitalized;
     button.classList.add("button-class", "btn", "btn-primary", "list-group-item", "list-group-item-action");
     listPokemon.classList.add("list-group-item");
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
     cardDiv.appendChild(button);
+    cardDiv.appendChild(pokeballImage);
     listPokemon.appendChild(cardDiv);
     addButtonEventHandler(button, pokemon);
+    pokeballImage.classList.add("pokeball-img");
+
 
   }
 

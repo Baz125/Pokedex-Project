@@ -20,7 +20,6 @@ let pokemonRepository = (function () {
     loadDetails(pokemon).then(function () {
       let modalBody = $(".modal-body");
       let modalTitle = $(".modal-title");
-      let modalHeader = $(".modal-header");
       let nameCapitalized = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 
       modalTitle.empty();
@@ -29,7 +28,7 @@ let pokemonRepository = (function () {
         return el.type.name;
       }).join(", ");
       let nameElement = $("<h1>" + nameCapitalized + "</h1>");
-      let imageElement = $('<img class="modal-img style="width:50%">');
+      let imageElement = $('<img class="modal-img">');
       imageElement.attr("src", pokemon.imageURL);
       let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
       let typesElement = $("<p>" + "types : " + processedTypes + "</p>");
@@ -38,7 +37,6 @@ let pokemonRepository = (function () {
       modalBody.append(heightElement);
       modalBody.append(typesElement);
       modalBody.append(imageElement);
-      console.log(pokemon.types);
 })  
   };
 
@@ -54,6 +52,7 @@ let pokemonRepository = (function () {
       hideModal();
     }
   });
+
 
 
   function loadList() {
@@ -89,7 +88,6 @@ let pokemonRepository = (function () {
     pokeballImage.setAttribute("src", "img/pokeball.png");
     button.innerText = nameCapitalized;
     button.classList.add("button-class", "btn", "btn-primary", "list-group-item", "list-group-item-action");
-    listPokemon.classList.add("list-group-item");
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
     cardDiv.appendChild(button);
@@ -97,8 +95,6 @@ let pokemonRepository = (function () {
     listPokemon.appendChild(cardDiv);
     addButtonEventHandler(button, pokemon);
     pokeballImage.classList.add("pokeball-img");
-
-
   }
 
   function loadDetails(item) {

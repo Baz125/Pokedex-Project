@@ -1,7 +1,9 @@
 let pokemonRepository = (function () {
+  // array where all loaded pokemon will be stored
   let repository = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+// checks if the loaded pokemon have a name and details URL and if so adds them to the array
   function add(pokemon) {
     const keys = Object.keys(pokemon);
       if (typeof pokemon === "object" &&
@@ -15,7 +17,7 @@ let pokemonRepository = (function () {
   function getAll() {
     return repository;
   }
-
+// displays modal using bootstrap
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       let modalBody = $(".modal-body");
@@ -25,6 +27,7 @@ let pokemonRepository = (function () {
 
       modalTitle.empty();
       modalBody.empty();
+      //this piece pulls the types out of the types array and turns them in to a string. As they are loaded from the API, the array is quite deeply nested. Console.log the array to see this
       let processedTypes = pokemon.types.map(function(el) {
         return el.type.name;
       }).join(", ");
@@ -56,6 +59,10 @@ let pokemonRepository = (function () {
   });
 
 
+<<<<<<< Updated upstream:js/scripts.js
+=======
+// fetch name and details URL from API after page loads
+>>>>>>> Stashed changes:src/js/scripts.js
   function loadList() {
     return  fetch(apiUrl).then(function (response){
       return response.json();
@@ -93,7 +100,7 @@ let pokemonRepository = (function () {
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
     cardDiv.appendChild(button);
-    cardDiv.appendChild(pokeballImage);
+    button.appendChild(pokeballImage);
     listPokemon.appendChild(cardDiv);
     addButtonEventHandler(button, pokemon);
     pokeballImage.classList.add("pokeball-img");

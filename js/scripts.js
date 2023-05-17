@@ -59,10 +59,7 @@ let pokemonRepository = (function () {
   });
 
 
-<<<<<<< Updated upstream:js/scripts.js
-=======
 // fetch name and details URL from API after page loads
->>>>>>> Stashed changes:src/js/scripts.js
   function loadList() {
     return  fetch(apiUrl).then(function (response){
       return response.json();

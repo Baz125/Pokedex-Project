@@ -18,7 +18,7 @@ body {
 	background-color: rgb(255, 255, 153);
 	padding: 8px;
 	border-radius: 12px;
-	border: 1px solid black;
+	border: 1px solid darkgrey;
     
     aspect-ratio: 0.75;
 }
@@ -82,13 +82,30 @@ body {
 .modal-dialog {
     width: fit-content;
     height: fit-content;
-    aspect-ratio: 0.75;
 }
 
+/* Style the h1 element inside the modal div */
 .modal h1 {
+	/* Use a modern font-family */
 	font-family: Arial, Helvetica, sans-serif;
+	/* Use a large font-size */
 	font-size: 36px;
+	/* Use a dark color that contrasts well with the background */
 	color: rgb(51, 51, 51);
+	/* Center the text horizontally */
+	text-align: center;
+	background-color: rgb(255, 255, 153);
+}
+
+/* Style the h2 element inside the modal div */
+.modal h2 {
+	/* Use the same font-family as h1 */
+	font-family: Arial, Helvetica, sans-serif;
+	/* Use a smaller font-size than h1 */
+	font-size: 24px;
+	/* Use the same color as h1 */
+	color: rgb(51, 51, 51);
+	/* Center the text horizontally */
 	text-align: center;
 	background-color: rgb(255, 255, 153);
 }

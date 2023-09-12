@@ -45,7 +45,7 @@ This project is a basic implementation of a Pokedex using the Pokedex API. It al
 
 To run the project locally, follow these steps:
 
-1. Clone the repository to your local machine:
+1. Clone the repository to your local machine.
    
 3. Open the project folder in your code editor.
 

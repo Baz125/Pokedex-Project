@@ -2,7 +2,6 @@
 let pokemonRepository = (function () {
   // array where all loaded pokemon will be stored
   let repository = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 // checks if the loaded pokemon have a name and details URL and if so adds them to the array
   function add(pokemon) {
@@ -58,19 +57,11 @@ let pokemonRepository = (function () {
   });
 
 
-<<<<<<< HEAD
-// fetch name and details URL from API after page loads
-=======
-<<<<<<<< HEAD:js/scripts.js
-// fetch name and details URL from API after page loads
-========
-
->>>>>>>> f951e694f2cb5e7e7d0ec215e91f674f2e0eff1a:src/js/scripts.js
->>>>>>> f951e694f2cb5e7e7d0ec215e91f674f2e0eff1a
-  function loadList() {
-    return  fetch(apiUrl).then(function (response){
+  function loadList(url) {
+    return  fetch(url).then(function (response){
       return response.json();
     }).then(function (json) {
+      console.log(json.prev, json.next);
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
@@ -132,11 +123,26 @@ let pokemonRepository = (function () {
   };
 })();
 
-pokemonRepository.loadList().then(function() {
+let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+pokemonRepository.loadList(apiUrl).then(function() {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+const searchInpt = document.getElementById("search");
+searchInpt.addEventListener("keydown", (e) => {
+  const pokemonList = document.querySelectorAll("li");
+  const keyword = e.target.value.toLowerCase();
+  pokemonList.forEach(li => {
+    if(li.innerText.toLowerCase().includes(keyword)) {
+      li.style.display = "block";
+    }
+    else {
+      li.style.display = "none";
+    }
+  })
+})
 
 
 

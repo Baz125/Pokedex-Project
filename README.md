@@ -1,4 +1,4 @@
-# Pokedex API Project Readme
+# Pokedex API Project
 
 ## Overview
 
